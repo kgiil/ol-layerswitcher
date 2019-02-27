@@ -1,5 +1,6 @@
 import Control from 'ol/control/Control';
 import Observable from 'ol/Observable';
+import VectorLayer from 'ol/layer/Vector';
 
 var CSS_PREFIX = 'layer-switcher-';
 
@@ -470,6 +471,10 @@ export default class LayerSwitcher extends Control {
      * @return     {boolean} True if the layer's checkbox is checked.
      */
     static toggleActive_(map, lyr, label) {
+
+        // Ignore if clicked is not a vector layer (return false)
+        if (!(lyr instanceof VectorLayer)) return false;
+
         // Remove any existing highlight
         const prevActiveLabel = LayerSwitcher.removeActiveHighlight_(map);
 

@@ -24,6 +24,7 @@ module.exports = {
     globals: {
         'ol/Map': 'ol.Map',
         'ol/Observable': 'ol.Observable',
-        'ol/control/Control': 'ol.control.Control'
+        'ol/control/Control': 'ol.control.Control',
+        'ol/layer/Vector': 'ol.layer.Vector'
     }
 };
