@@ -99,7 +99,8 @@ export default class LayerSwitcher extends Control {
     * Hide the layer panel.
     */
     hidePanel() {
-        if (this.element.classList.contains(this.shownClassName)) {
+        if (!this.getMap().get('active-layer')
+          && this.element.classList.contains(this.shownClassName)) {
             this.element.classList.remove(this.shownClassName);
         }
     }
