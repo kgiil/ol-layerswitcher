@@ -130,3 +130,7 @@
     margin-right: 4px;
     margin-left: -7px;
 }
+
+.layer-switcher li.layer .layer-switcher-active-layer {
+    background-color: #f88;
+}
