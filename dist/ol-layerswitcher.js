@@ -154,6 +154,13 @@ var LayerSwitcher = function (_Control) {
             e.preventDefault();
         };
 
+        this_.panel.onclick = function (e) {
+            e = e || window.event;
+            if (e.toElement === this_.panel || e.toElement === this_.panel.children[0]) {
+                LayerSwitcher.removeActiveHighlight_(this_.getMap());
+            }
+        };
+
         this_.panel.onmouseout = function (e) {
             e = e || window.event;
             if (!this_.panel.contains(e.toElement || e.relatedTarget)) {
