@@ -487,7 +487,7 @@ export default class LayerSwitcher extends Control {
     }
 
     /**
-     * Removes an active highlight.
+     * Removes the active highlight.
      * @private
      * @param      {ol.Map} map The map instance.
      * @return     {Element}  DOM element for the label that was highlighted.
