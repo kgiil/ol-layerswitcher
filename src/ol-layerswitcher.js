@@ -389,13 +389,15 @@ export default class LayerSwitcher extends Control {
 
             li.appendChild(label);
 
-            if (map.get('active-layer') === lyr) {
-                label.classList.add(CSS_PREFIX + 'active-layer');
-            }
-
-            label.onclick = function (e) {
-                if (LayerSwitcher.toggleActive_(map, lyr, label)) {
-                    e.preventDefault();
+            const activeLayer = map.get('active-layer');
+            if (activeLayer !== undefined) {
+                if (activeLayer === lyr) {
+                    label.classList.add(CSS_PREFIX + 'active-layer');
+                }
+                label.onclick = function (e) {
+                    if (LayerSwitcher.toggleActive_(map, lyr, label)) {
+                        e.preventDefault();
+                    }
                 }
             };
         }

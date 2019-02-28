@@ -607,15 +607,17 @@ var LayerSwitcher = function (_Control) {
 
                 li.appendChild(label);
 
-                if (map.get('active-layer') === lyr) {
-                    label.classList.add(CSS_PREFIX + 'active-layer');
-                }
-
-                label.onclick = function (e) {
-                    if (LayerSwitcher.toggleActive_(map, lyr, label)) {
-                        e.preventDefault();
+                var activeLayer = map.get('active-layer');
+                if (activeLayer !== undefined) {
+                    if (activeLayer === lyr) {
+                        label.classList.add(CSS_PREFIX + 'active-layer');
                     }
-                };
+                    label.onclick = function (e) {
+                        if (LayerSwitcher.toggleActive_(map, lyr, label)) {
+                            e.preventDefault();
+                        }
+                    };
+                }
             }
 
             return li;
